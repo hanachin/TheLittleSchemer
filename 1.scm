@@ -63,6 +63,7 @@
               (result (cons s l)))
          (and (equal? (car result) s)
               (equal? (cdr result) l))))
+;; In practice, (cons a b) works for all values a and b.
 (test* "(let1 result (cons 'a 'b) (and (eq? (car result) 'a) (eq? (cdr result) 'b)))"
        #t
        (let1 result (cons 'a 'b) (and (eq? (car result) 'a) (eq? (cdr result) 'b))))
@@ -72,6 +73,7 @@
 (test-section "null?")
 (test* "(null? '())" #t (null? '()))
 (test* "(null? '(a b c))" #f (null? '(a b c)))
+;; In practice, (null? a) is false for everything, except the empty list.
 (test* "(null? 'spaghetti)" #f (null? 'spaghetti))
 
 (test-section "confirm")
@@ -86,7 +88,9 @@
 (test-section "eq?")
 (test* "(eq? 'Harry 'Harry)" #t (eq? 'Harry 'Harry))
 (test* "(eq? 'margarine 'butter)" #f (eq? 'margarine 'butter))
+;; In practice, lists may be arguments of eq?. Two lists are eq? if they are the same list.
 (test* "(eq? '() '(strawberry))" #f (eq? '() '(strawberry)))
+;; In practice, some numbers may be arguments of eq?
 (test* "(eq? 6 7)" #f (eq? 6 7))
 (test* "(eq? (car '(Mary had a little lamb lamb)) 'Mary)" #t (eq? (car '(Mary had a little lamb lamb)) 'Mary))
 (test* "(eq? (cdr '(soured milk)) 'milk)" #f (eq? (cdr '(soured milk)) 'milk))
