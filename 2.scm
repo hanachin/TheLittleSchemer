@@ -9,5 +9,7 @@
 (test* "(lat? '((Jack) Sprat could eat no chicken fat))" #f (lat? '((Jack) Sprat could eat no chicken fat)))
 (test* "(lat? '(Jack (Sprat could) eat no chicken fat))" #f (lat? '((Jack) Sprat could eat no chicken fat)))
 (test* "(lat? '())" #t (lat? '()))
+(test* "(lat? '(bacon and eggs))" #t (lat? '(bacon and eggs)))
+(test* "(lat? '(bacon (and eggs)))" #f (lat? '(bacon (and eggs))))
 
 (test-end)
