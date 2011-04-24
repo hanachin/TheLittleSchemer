@@ -12,4 +12,9 @@
 (test* "(lat? '(bacon and eggs))" #t (lat? '(bacon and eggs)))
 (test* "(lat? '(bacon (and eggs)))" #f (lat? '(bacon (and eggs))))
 
+(test-section "or")
+(test* "(or (null? '()) (null? '(d e f g)))" #t (or (null? '()) (null? '(d e f g))))
+(test* "(or (null? '(a b c)) (null? '()))" #t (or (null? '(a b c)) (null? '())))
+(test* "(or (null? '(a b c)) (null? '(atom)))" #f (or (null? '(a b c)) (null? '(atom))))
+ 
 (test-end)
