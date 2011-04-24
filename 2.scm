@@ -16,5 +16,9 @@
 (test* "(or (null? '()) (null? '(d e f g)))" #t (or (null? '()) (null? '(d e f g))))
 (test* "(or (null? '(a b c)) (null? '()))" #t (or (null? '(a b c)) (null? '())))
 (test* "(or (null? '(a b c)) (null? '(atom)))" #f (or (null? '(a b c)) (null? '(atom))))
- 
+
+(test-section "member?")
+(test* "(member? 'tea '(coffee tea or milk))" #t (member? 'tea '(coffee tea or milk)))
+(test* "(member? 'poached '(fried eggs and scrambled eggs))" #f (member? 'poached '(fried eggs and scrambled eggs)))
+
 (test-end)
