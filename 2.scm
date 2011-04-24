@@ -20,5 +20,7 @@
 (test-section "member?")
 (test* "(member? 'tea '(coffee tea or milk))" #t (member? 'tea '(coffee tea or milk)))
 (test* "(member? 'poached '(fried eggs and scrambled eggs))" #f (member? 'poached '(fried eggs and scrambled eggs)))
+(test* "(member? 'meat '(mashed potatoes and meat gravy))" #t (member? 'meat '(mashed potatoes and meat gravy)))
+(test* "(member? 'liver '(bagels and lox))" #f (member? 'liver '(bagels and lox)))
 
 (test-end)
