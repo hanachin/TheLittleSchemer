@@ -10,5 +10,6 @@
 (test* "(rember 'cup '(coffee cup tea cup and hick cup))" '(coffee tea cup and hick cup) (rember 'cup '(coffee cup tea cup and hick cup)))
 (test* "(rember 'bacon '(bacon lettuce and tomato))" '(lettuce and tomato) (rember 'bacon '(bacon lettuce and tomato)))
 (test* "(rember 'and '(bacon lettuce and tomato))" '(bacon lettuce tomato) (rember 'and '(bacon lettuce and tomato)))
+(test* "(rember 'sauce '(soy sauce and tomato sauce))" '(soy and tomato sauce) (rember 'sauce '(soy sauce and tomato sauce)))
 
 (test-end)
