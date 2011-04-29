@@ -8,5 +8,7 @@
 (test* "(rember 'mint '(lamb chops and mint flavored mint jelly))" '(lamb chops and flavored mint jelly) (rember 'mint '(lamb chops and mint flavored mint jelly)))
 (test* "(rember 'toast '(bacon lettuce and tomato))" '(bacon lettuce and tomato) (rember 'toast '(bacon lettuce and tomato)))
 (test* "(rember 'cup '(coffee cup tea cup and hick cup))" '(coffee tea cup and hick cup) (rember 'cup '(coffee cup tea cup and hick cup)))
+(test* "(rember 'bacon '(bacon lettuce and tomato))" '(lettuce and tomato) (rember 'bacon '(bacon lettuce and tomato)))
+(test* "(rember 'and '(bacon lettuce and tomato))" '(bacon lettuce tomato) (rember 'bacon '(bacon lettuce and tomato)))
 
 (test-end)
