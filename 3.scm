@@ -26,5 +26,8 @@
        (firsts '(((five plums) four)
                  (eleven green oranges)
                  ((no) more))))
+
+(test-section "seconds")
+(test* "(seconds '((a b) (c d) (e f)))" '(b d f) (seconds '((a b) (c d) (e f))))
  
 (test-end)
