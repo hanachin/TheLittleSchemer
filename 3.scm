@@ -13,10 +13,11 @@
 (test* "(rember 'sauce '(soy sauce and tomato sauce))" '(soy and tomato sauce) (rember 'sauce '(soy sauce and tomato sauce)))
 
 (test-section "firsts")
-(test* "(firsts '((apple peach pumpkin) (plum pear cherry) (bean carrot eggplant)))"
+(test* "(firsts '((apple peach pumpkin) (plum pear cherry) (grape raisin pea) (bean carrot eggplant)))"
        '(apple plum grape bean)
        (firsts '((apple peach pumpkin)
                  (plum pear cherry)
+                 (grape raisin pea)
                  (bean carrot eggplant))))
 (test* "(firsts '((a b) (c d) (e f)))" '(a c e) (firsts '((a b) (c d) (e f))))
 (test* "(firsts '())" '() (firsts '()))
