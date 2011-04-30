@@ -52,4 +52,7 @@
        '(vanilla ice creamwith chocolate topping)
        (subst2 'vanilla 'chocolate 'banana '(banana ice creamwith chocolate topping)))
 
+(test-section "multirember")
+(test* "(multirember 'cup '(coffee cup tea cup and hick cup))" '(coffee tea and hick) (multirember 'cup '(coffee cup tea cup and hick cup)))
+
 (test-end)
