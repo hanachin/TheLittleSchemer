@@ -52,3 +52,11 @@
           ((eq? (car lat) old) (cons old (cons new (cdr lat))))
           (else (cons (car lat)
                       (insertR new old (cdr lat)))))))
+
+;; p.52 insertL (simplify)
+(define insertL
+  (lambda (new old lat)
+    (cond ((null? lat) '())
+          ((eq? (car lat) old) (cons new lat))
+          (else (cons (car lat)
+                      (insertL new old (cdr lat)))))))
