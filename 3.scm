@@ -44,4 +44,7 @@
 (test* "(insertL 'jalapeno 'and '(tacos tamales and salsa))" '(tacos tamales jalapeno and salsa) (insertL 'jalapeno 'and '(tacos tamales and salsa)))
 (test* "(insertL 'e 'd '(a b c d f g d h))" '(a b c e d f g d h) (insertL 'e 'd '(a b c d f g d h)))
 
+(test-section "subst")
+(test* "(subst 'topping 'fudge '(ice cream with fudge for dessert))" '(ice cream with topping for dessert) (subst 'topping 'fudge '(ice cream with fudge for dessert)))
+
 (test-end)
