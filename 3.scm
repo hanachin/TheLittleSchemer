@@ -38,4 +38,9 @@
 (test* "(insertR 'jalapeno 'and '(tacos tamales and salsa))" '(tacos tamales and jalapeno salsa) (insertR 'jalapeno 'and '(tacos tamales and salsa)))
 (test* "(insertR 'e 'd '(a b c d f g d h))" '(a b c d e f g d h) (insertR 'e 'd '(a b c d f g d h)))
 
+;; my insertL test
+(test* "(insertL 'topping 'fudge '(ice cream with fudge for dessert))" '(ice cream with topping fudge for dessert) (insertL 'topping 'fudge '(ice cream with fudge for dessert)))
+(test* "(insertL 'jalapeno 'and '(tacos tamales and salsa))" '(tacos tamales jalapeno and salsa) (insertL 'jalapeno 'and '(tacos tamales and salsa)))
+(test* "(insertL 'e 'd '(a b c d f g d h))" '(a b c e d f g d h) (insertL 'e 'd '(a b c d f g d h)))
+
 (test-end)
