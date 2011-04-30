@@ -51,4 +51,4 @@
     (cond ((null? lat) '())
           ((eq? (car lat) old) (cons old (cons new (cdr lat))))
           (else (cons (car lat)
-                      (insertR new old (cdr lat)))))))))
+                      (insertR new old (cdr lat))))))))
