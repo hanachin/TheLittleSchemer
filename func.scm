@@ -45,10 +45,10 @@
           (else (cons (car (cdr (car l)))
                       (seconds (cdr l)))))))
 
-;; p.50
+;; p.51
 (define insertR
   (lambda (new old lat)
     (cond ((null? lat) '())
-          (else (cond ((eq? (car lat) old) (cdr lat))
+          (else (cond ((eq? (car lat) old) (cons new (cdr lat)))
                       (else (cons (car lat)
                                   (insertR new old (cdr lat)))))))))
