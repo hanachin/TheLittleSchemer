@@ -55,4 +55,9 @@
 (test-section "multirember")
 (test* "(multirember 'cup '(coffee cup tea cup and hick cup))" '(coffee tea and hick) (multirember 'cup '(coffee cup tea cup and hick cup)))
 
+;; my multiinsertR test
+(test-section "multiinsertR")
+(test* "(multiinsertR 'e 'd '(a b c d f g d h))" '(a b c d e f g d e h) (multiinsertR 'e 'd '(a b c d f g d h)))
+(test* "(multiinsertR 'y 'y '(w r y y y y y))" '(w r y y y y y y y y y y) (multiinsertR 'y 'y '(w r y y y y y)))
+
 (test-end)
