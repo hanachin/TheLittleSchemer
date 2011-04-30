@@ -64,4 +64,8 @@
 (test* "(multiinsertL 'fried 'fish '(chips and fish or fish and fried))" '(chips and fried fish or fried fish and fried) (multiinsertL 'fried 'fish '(chips and fish or fish and fried)))
 (test* "(multiinsertL 'j 'o '(o o))" '(j o j o) (multiinsertL 'j 'o '(o o)))
 
+(test-section "multisubst")
+(test* "(multisubst 'o 'i '(i p p a i))" '(o p p a o) (multisubst 'o 'i '(i p p a i)))
+(test* "(multisubst 'o 'i '())" '() (multisubst 'o 'i '()))
+
 (test-end)
