@@ -32,7 +32,7 @@
 (test* "(seconds '((a b) (c d) (e f)))" '(b d f) (seconds '((a b) (c d) (e f))))
 
 (test-section "insertR")
-(test* "(insertR 'topping 'fudge '(ice cream with fudge for dessert))" '(ice cream with fudge for dessert) (insertR 'topping 'fudge '(ice cream with fudge for dessert)))
+(test* "(insertR 'topping 'fudge '(ice cream with fudge for dessert))" '(ice cream with fudge topping for dessert) (insertR 'topping 'fudge '(ice cream with fudge for dessert)))
 ;; Gauche
 ;; (test* "(insertR '|jalapeño| 'and '(tacos tamales and salsa))" '(tacos tamales and |jalapeño| salsa) (insertR '|jalapeño| 'and '(tacos tamales and salsa)))
 (test* "(insertR 'jalapeno 'and '(tacos tamales and salsa))" '(tacos tamales and jalapeno salsa) (insertR 'jalapeno 'and '(tacos tamales and salsa)))
