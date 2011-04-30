@@ -47,4 +47,9 @@
 (test-section "subst")
 (test* "(subst 'topping 'fudge '(ice cream with fudge for dessert))" '(ice cream with topping for dessert) (subst 'topping 'fudge '(ice cream with fudge for dessert)))
 
+(test-section "subst2")
+(test* "(subst2 'vanilla 'chocolate 'banana '(banana ice creamwith chocolate topping))"
+       '(vanilla ice creamwith chocolate topping)
+       (subst2 'vanilla 'chocolate 'banana '(banana ice creamwith chocolate topping)))
+
 (test-end)
