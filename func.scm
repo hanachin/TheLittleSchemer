@@ -102,3 +102,11 @@
           ((eq? (car lat) old) (cons new (cons old (multiinsertL new old (cdr lat)))))
           (else (cons (car lat)
                       (multiinsertL new old (cdr lat)))))))
+
+;; p.59
+(define multisubst
+  (lambda (new old lat)
+    (cond ((null? lat) '())
+          ((eq? (car lat) old) (cons new (multisubst new old (cdr lat))))
+          (else (cons (car lat)
+                      (multisubst new old (cdr lat)))))))
