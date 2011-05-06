@@ -151,3 +151,9 @@
   (lambda (tup)
     (cond ((null?  tup) 0)
           (else (o+ (car tup) (addtup (cdr tup)))))))
+
+;; p.67
+(define o*
+  (lambda (n m)
+    (cond ((zero? m) 0)
+          (else (o+ n (o* n (sub1 m)))))))
