@@ -5,4 +5,7 @@
 
 (test-start "chapter 4")
 
+(test-section "atom?")
+(eqt (atom? 14) #t)
+
 (test-end)
