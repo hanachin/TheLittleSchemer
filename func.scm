@@ -138,3 +138,10 @@
   (lambda (n m)
     (cond ((zero? m) n)
           (else (o- (sub1 n) (sub1 m))))))
+
+;; my tup?
+(define tup?
+  (lambda (l)
+    (cond ((null? l) #t)
+          ((number? (car l)) (tup? (cdr l)))
+          (else #f))))
