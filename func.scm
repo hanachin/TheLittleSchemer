@@ -110,3 +110,8 @@
           ((eq? (car lat) old) (cons new (multisubst new old (cdr lat))))
           (else (cons (car lat)
                       (multisubst new old (cdr lat)))))))
+
+;; p.61
+(define add1
+  (lambda (n)
+    (+ n 1)))
