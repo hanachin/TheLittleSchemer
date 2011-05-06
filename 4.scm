@@ -15,4 +15,7 @@
           (number? 3.1415))
      #t)
 
+(f-test
+ (add1 [67 => 68]))
+
 (test-end)
