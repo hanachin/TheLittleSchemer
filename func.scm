@@ -120,3 +120,9 @@
 (define sub1
   (lambda (n)
     (- n 1)))
+
+;; p.62
+(define o+
+  (lambda (n m)
+    (cond ((zero? m) n)
+          (else (add1 (o+ n (sub1 m)))))))
