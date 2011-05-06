@@ -145,3 +145,9 @@
     (cond ((null? l) #t)
           ((number? (car l)) (tup? (cdr l)))
           (else #f))))
+
+;; p.66
+(define addtup
+  (lambda (tup)
+    (cond ((null?  tup) 0)
+          (else (o+ (car tup) (addtup (cdr tup)))))))
