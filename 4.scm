@@ -16,6 +16,9 @@
      #t)
 
 (f-test
- (add1 [67 => 68]))
+ (add1 [67 => 68])
+ (sub1 [5 => 4]
+       ;; In practice
+       [0 => -1]))
 
 (test-end)
