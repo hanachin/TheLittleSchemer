@@ -115,3 +115,8 @@
 (define add1
   (lambda (n)
     (+ n 1)))
+
+;; p.61
+(define sub1
+  (lambda (n)
+    (- n 1)))
