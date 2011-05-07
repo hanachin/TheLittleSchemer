@@ -56,6 +56,8 @@
          [5 3 => 125])
  (o/ [15 4 => 3])
  (length ['(hotdogs with mustard sauerkraut and pickles) => 6]
-         ['(ham and cheese on rye) => 5]))
+         ['(ham and cheese on rye) => 5])
+ (pick [4 '(lasagna spaghetti ravioli macaroni meatball) => 'macaroni]
+       [0 'a => (test-error)]))
 
 (test-end)
