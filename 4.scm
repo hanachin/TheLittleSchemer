@@ -54,6 +54,8 @@
  (o-expt [1 1 => 1]
          [2 3 => 8]
          [5 3 => 125])
- (o/ [15 4 => 3]))
+ (o/ [15 4 => 3])
+ (length ['(hotdogs with mustard sauerkraut and pickles) => 6]
+         ['(ham and cheese on rye) => 5]))
 
 (test-end)
