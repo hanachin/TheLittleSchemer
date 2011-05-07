@@ -230,3 +230,11 @@
     (cond ((= 1 n) (cdr lat))
           (else (cons (car lat)
                       (rempick (sub1 n) (cdr lat)))))))
+
+;; p.79
+(define no-nums
+  (lambda (lat)
+    (cond ((null? lat) '())
+          (else (cond ((number? (car lat)) (no-nums (cdr lat)))
+                      (else (cons (car lat)
+                                  (no-nums (cdr lat)))))))))
