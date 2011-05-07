@@ -248,6 +248,7 @@
                              (all-nums (cdr lat))))
                       (else (all-nums (cdr lat))))))))
 
+;; p.80
 (define eqan?
   (lambda (a1 a2)
     (cond ((and (number? a1) (number? a2)) (o= a1 a2))
