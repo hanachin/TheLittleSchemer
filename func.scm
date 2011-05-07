@@ -254,3 +254,10 @@
     (cond ((and (number? a1) (number? a2)) (o= a1 a2))
           ((or (number? a1) (number? a2)) #f)
           (else (eq? a1 a2)))))
+
+;; p.80
+(define occur
+  (lambda (a lat)
+    (cond ((null? lat) 0)
+          (else (cond ((eqan? (car lat) a) (add1 (occur a (cdr lat))))
+                      (else (occur a (cdr lat))))))))
