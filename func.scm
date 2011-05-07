@@ -198,3 +198,9 @@
   (lambda (n m)
     (cond ((o< n m) 0)
           (else (add1 (o/ (o- n m) m))))))
+
+;; p.78
+(define length
+  (lambda (lat)
+    (cond ((null? lat) 0)
+          (else (add1 (length (cdr lat)))))))
