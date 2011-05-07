@@ -58,6 +58,7 @@
  (length ['(hotdogs with mustard sauerkraut and pickles) => 6]
          ['(ham and cheese on rye) => 5])
  (pick [4 '(lasagna spaghetti ravioli macaroni meatball) => 'macaroni]
-       [0 'a => (test-error)]))
+       [0 'a => (test-error)])
+ (rempick [3 '(hotdogs with hot mustard) => '(hotdogs with mustard)]))
 
 (test-end)
