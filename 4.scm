@@ -59,7 +59,8 @@
          ['(ham and cheese on rye) => 5])
  (pick [4 '(lasagna spaghetti ravioli macaroni meatball) => 'macaroni]
        [0 'a => (test-error)])
- (rempick [3 '(hotdogs with hot mustard) => '(hotdogs with mustard)])
+ (rempick [3 '(hotdogs with hot mustard) => '(hotdogs with mustard)]
+          [3 '(lemon meringue salty pie) => '(lemon meringue pie)])
  (number? ['tomato => #f]
           [76 => #t])
  (no-nums ['(5 pears 6 prunes 9 dates) => '(pears prunes dates)])
