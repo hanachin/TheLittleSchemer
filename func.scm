@@ -192,3 +192,9 @@
   (lambda (n m)
     (cond ((zero? m) 1)
           (else (o* n (o-expt n (sub1 m)))))))
+
+;; p.77
+(define o/
+  (lambda (n m)
+    (cond ((o< n m) 0)
+          (else (add1 (o/ (o- n m) m))))))
