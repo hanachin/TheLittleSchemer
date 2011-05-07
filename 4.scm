@@ -61,6 +61,7 @@
        [0 'a => (test-error)])
  (rempick [3 '(hotdogs with hot mustard) => '(hotdogs with mustard)])
  (number? ['tomato => #f]
-          [76 => #t]))
+          [76 => #t])
+ (no-nums ['(5 pears 6 prunes 9 dates) => '(pears prunes dates)]))
 
 (test-end)
