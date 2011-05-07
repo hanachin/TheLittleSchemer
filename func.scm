@@ -261,3 +261,8 @@
     (cond ((null? lat) 0)
           (else (cond ((eqan? (car lat) a) (add1 (occur a (cdr lat))))
                       (else (occur a (cdr lat))))))))
+
+;; p.81
+(define one?
+  (lambda (n)
+    (o= n 1)))
