@@ -63,6 +63,13 @@
  (number? ['tomato => #f]
           [76 => #t])
  (no-nums ['(5 pears 6 prunes 9 dates) => '(pears prunes dates)])
- (all-nums ['(5 pears 6 prunes 9 dates) => '(5 6 9)]))
+ (all-nums ['(5 pears 6 prunes 9 dates) => '(5 6 9)])
+ (eqan? ['a 'a => #t]
+        ['a 'b => #f]
+        ['a 0 => #f]
+        [0 'a => #f]
+        [0 0 => #t]
+        [1 0 => #f]
+        [0 1 => #f]))
 
 (test-end)
