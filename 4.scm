@@ -77,6 +77,10 @@
  (occur ['a '() => 0]
         ['a '(a a a) => 3]
         ['a '(a b c) => 1]
-        ['a '(i ro ha) => 0]))
+        ['a '(i ro ha) => 0])
+ ;; my one?
+ (one? [0 => #f]
+       [1 => #t]
+       [2 => #f]))
 
 (test-end)
