@@ -183,6 +183,6 @@
 ;; p.76
 (define o=
   (lambda (n m)
-    (cond ((zero? m) (zero? n))
-          ((zero? n) #f)
-          (else (o= (sub1 n) (sub1 m))))))
+    (cond ((o> n m) #f)
+          ((o< n m) #f)
+          (else #t))))
