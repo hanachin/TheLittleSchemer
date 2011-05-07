@@ -179,3 +179,10 @@
     (cond ((zero? m) #f)
           ((zero? n) #t)
           (else (o< (sub1 n) (sub1 m))))))
+
+;; p.76
+(define o=
+  (lambda (n m)
+    (cond ((zero? m) (zero? n))
+          ((zero? n) #f)
+          (else (o= (sub1 n) (sub1 m))))))
