@@ -165,3 +165,10 @@
           ((null? tup2) tup1)
           (else (cons (o+ (car tup1) (car tup2))
                       (tup+ (cdr tup1) (cdr tup2)))))))
+
+;; p.74
+(define o>
+  (lambda (n m)
+    (cond ((zero? m) #t)
+          ((zero? n) #f)
+          (else (o> (sub1 n) (sub1 m))))))
