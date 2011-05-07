@@ -186,3 +186,9 @@
     (cond ((o> n m) #f)
           ((o< n m) #f)
           (else #t))))
+
+;; p.76
+(define o-expt
+  (lambda (n m)
+    (cond ((zero? m) 1)
+          (else (o* n (o-expt n (sub1 m)))))))
