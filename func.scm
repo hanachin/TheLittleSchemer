@@ -289,3 +289,14 @@
                              (insertR* new old (cdr l))))))
           (else (cons (insertR* new old (car l))
                       (insertR* new old (cdr l)))))))
+
+;; p.87
+(define occur*
+  (lambda (a l)
+    (cond ((null? l) 0)
+          ((atom? (car l))
+           (cond ((eq? (car l) a)
+                  (add1 (occur* a (cdr l))))
+                 (else (occur* a (cdr l)))))
+          (else (o+ (occur* a (car l))
+                    (occur* a (cdr l)))))))
