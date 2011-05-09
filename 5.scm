@@ -60,6 +60,8 @@
                          ((a (wood) pecker chuck))
                          (((pecker chuck)))
                          (if (a) (wood pecker chuck))
-                         could pecker chuck wood)]))
+                         could pecker chuck wood)])
+ (member* ['chips '((potato) (chips ((with) fish) (chips)))
+                  => #t]))
 
 (test-end)
