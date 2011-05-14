@@ -62,6 +62,10 @@
                          (if (a) (wood pecker chuck))
                          could pecker chuck wood)])
  (member* ['chips '((potato) (chips ((with) fish) (chips)))
-                  => #t]))
+                  => #t])
+ (leftmost ['((potato) (chips ((with) fish) (chips))) => 'potato]
+           ['(((hot) (tuna (and))) cheese) => 'hot]
+           ['(((() four)) 17 (seventeen)) => (test-error)]
+           [(quote ()) => (test-error)]))
 
 (test-end)
