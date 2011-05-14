@@ -66,6 +66,15 @@
  (leftmost ['((potato) (chips ((with) fish) (chips))) => 'potato]
            ['(((hot) (tuna (and))) cheese) => 'hot]
            ['(((() four)) 17 (seventeen)) => (test-error)]
-           [(quote ()) => (test-error)]))
+           [(quote ()) => (test-error)])
+ (eqlist? ['(strawberry ice cream) '(strawberry ice cream) => #t]
+          ['(strawberry ice cream) '(strawberry cream ice) => #f]
+          ['(banana ((split))) '((banana) (split)) => #f]
+          ['(beef ((sausage)) (and (soda)))
+           '(beef ((salami)) (and (soda)))
+           => #f]
+          ['(beef ((sausage)) (and (soda)))
+           '(beef ((sausage)) (and (soda)))
+           => #t]))
 
 (test-end)
