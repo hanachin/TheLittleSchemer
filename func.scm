@@ -349,3 +349,12 @@
           ((or (atom? (car l1)) (atom? (car l2))) #f)
           (else (and (eqlist? (car l1) (car l2))
                      (eqlist? (cdr l1) (cdr l2)))))))
+
+;; p.95
+(define equal?
+  (lambda (s1 s2)
+    (cond ((and (atom? s1) (atom? s2))
+           (eqan? s1 s2))
+          ((atom? s1) #f)
+          ((atom? s2) #f)
+          (else (eqlist? s1 s2)))))
