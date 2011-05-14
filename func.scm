@@ -23,13 +23,17 @@
     (cond ((null? lat) #f)
           (else (or (eq? (car lat) a)
                     (member? a (cdr lat)))))))
-;; p.41
+;; p.96
 (define rember
-  (lambda (a lat)
-    (cond ((null? lat) '())
-          ((eq? (car lat) a) (cdr lat))
-          (else (cons (car lat)
-                      (rember a (cdr lat)))))))
+  (lambda (s l)
+    (cond ((null? l) '())
+          ((atom? (car l))
+           (cond ((equal? (car l) s) (cdr l))
+                 (else (cons (car l)
+                             (rember s (cdr l))))))
+          (else (cond ((equal? (car l) s) (cdr l))
+                      (else (cons (car l)
+                                  (rember s (cdr l)))))))))
 
 ;; p.46, p.48
 (define firsts
