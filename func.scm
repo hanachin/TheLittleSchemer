@@ -331,3 +331,9 @@
                                (member* a (cdr l))))
           (else (or (member* a (car l))
                     (member* a (cdr l)))))))
+
+;; p.90
+(define leftmost
+  (lambda (l)
+    (cond ((atom? (car l)) (car l))
+          (else (leftmost (car l))))))
