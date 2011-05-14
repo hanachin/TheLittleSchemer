@@ -27,13 +27,10 @@
 (define rember
   (lambda (s l)
     (cond ((null? l) '())
-          ((atom? (car l))
+          (else 
            (cond ((equal? (car l) s) (cdr l))
                  (else (cons (car l)
-                             (rember s (cdr l))))))
-          (else (cond ((equal? (car l) s) (cdr l))
-                      (else (cons (car l)
-                                  (rember s (cdr l)))))))))
+                             (rember s (cdr l)))))))))
 
 ;; p.46, p.48
 (define firsts
