@@ -387,3 +387,16 @@
           (else
            (o-expt (value (1st-sub-exp nexp))
                    (value (2nd-sub-exp nexp)))))))
+
+;; p.109
+(define sero?
+  (lambda (n)
+    (null? n)))
+
+(define edd1
+  (lambda (n)
+    (cons '() n)))
+
+(define zub1
+  (lambda (n)
+    (cdr n)))
