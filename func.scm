@@ -400,3 +400,8 @@
 (define zub1
   (lambda (n)
     (cdr n)))
+
+(define oo+
+  (lambda (n m)
+    (cond ((sero? m) n)
+          (else (edd1 (oo+ n (zub1 m)))))))
