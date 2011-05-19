@@ -361,6 +361,19 @@
            (and (numbered? (car aexp))
                 (numbered? (car (cdr (cdr aexp)))))))))
 
+;; p.107
+(define 1st-sub-exp
+  (lambda (aexp)
+    (car (cdr aexp))))
+
+(define 2nd-sub-exp
+  (lambda (aexp)
+    (car (cdr (cdr aexp)))))
+
+(define operator
+  (lambda (aexp)
+    (car aexp)))
+
 ;; p.105
 (define value
   (lambda (nexp)
