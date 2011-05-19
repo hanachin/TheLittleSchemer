@@ -11,6 +11,7 @@
  (value [13 => 13]
         ['(1 + 3) => 4]
         ['(1 + (3 expt 4)) => 82]
-        ['cookie => (test-error)]))
+        ;; ['cookie => (test-error)]
+        ))
 
 (test-end)
