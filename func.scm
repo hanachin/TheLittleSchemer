@@ -360,3 +360,17 @@
           (else
            (and (numbered? (car aexp))
                 (numbered? (car (cdr (cdr aexp)))))))))
+
+;; p.105
+(define value
+  (lambda (nexp)
+    (cond ((atom? nexp) nexp)
+          ((eq? (car (cdr nexp)) '+)
+           (o+ (value (car nexp))
+               (value (car (cdr (cdr nexp))))))
+          ((eq? (car (cdr nexp)) '*)
+           (o* (value (car nexp))
+               (value (car (cdr (cdr nexp))))))
+          (else
+           (o-expt (value (car nexp))
+                   (value (car (cdr (cdr nexp)))))))))
