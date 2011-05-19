@@ -365,12 +365,12 @@
 (define value
   (lambda (nexp)
     (cond ((atom? nexp) nexp)
-          ((eq? (car (cdr nexp)) '+)
-           (o+ (value (car nexp))
+          ((eq? (car nexp) '+)
+           (o+ (value (car (cdr nexp)))
                (value (car (cdr (cdr nexp))))))
-          ((eq? (car (cdr nexp)) '*)
-           (o* (value (car nexp))
+          ((eq? (car nexp) '*)
+           (o* (value (car (cdr nexp)))
                (value (car (cdr (cdr nexp))))))
           (else
-           (o-expt (value (car nexp))
+           (o-expt (value (car (cdr nexp)))
                    (value (car (cdr (cdr nexp)))))))))
