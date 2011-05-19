@@ -405,3 +405,10 @@
   (lambda (n m)
     (cond ((sero? m) n)
           (else (edd1 (oo+ n (zub1 m)))))))
+
+;; p.113
+(define set?
+  (lambda (lat)
+    (cond ((null? lat) #t)
+          ((member? (car lat) (cdr lat)) #f)
+          (else (set? (cdr lat))))))
