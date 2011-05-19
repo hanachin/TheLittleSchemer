@@ -352,3 +352,17 @@
            (eqan? s1 s2))
           ((or (atom? s1) (atom? s2)) #f)
           (else (eqlist? s1 s2)))))
+
+;; p.103
+(define numbered?
+  (lambda (aexp)
+    (cond ((atom? aexp) (number? aexp))
+          ((eq? (car (cdr aexp)) '+)
+           (and (numbered? (car aexp))
+                (numbered? (car (cdr (cdr aexp))))))
+          ((eq? (car (cdr aexp)) '*)
+           (and (numbered? (car aexp))
+                (numbered? (car (cdr (cdr aexp))))))
+          ((eq? (car (cdr aexp)) 'expt)
+           (and (numbered? (car aexp))
+                (numbered? (car (cdr (cdr aexp)))))))))
