@@ -21,7 +21,7 @@
 (define member?
   (lambda (a lat)
     (cond ((null? lat) #f)
-          (else (or (eq? (car lat) a)
+          (else (or (equal? (car lat) a)
                     (member? a (cdr lat)))))))
 ;; p.97
 (define rember
