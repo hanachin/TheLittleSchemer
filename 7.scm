@@ -21,6 +21,9 @@
           ['(4 pounds of horseradish)
            '(four pounds chicken and
                   5 ounces horseradish)
-           => #f]))
+           => #f])
+ (eqset? ['(6 large chickens with wings)
+          '(6 chickens with large wings)
+          => #t]))
 
 (test-end)
