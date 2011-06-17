@@ -8,6 +8,7 @@
 (f-test
  (set? ['(apple peaches apple plum) => #f]
        ['(apples peaches pears plums) => #t]
-       ['() => #t]))
+       ['() => #t]
+       ['(apple 3 pear 4 9 apple 3 4) => #f]))
 
 (test-end)
