@@ -473,3 +473,12 @@
           ((null? (cdr l-set)) (car l-set))
           (else (intersect (car l-set)
                            (intersectall (cdr l-set)))))))
+
+;; p.119
+(define a-pair?
+  (lambda (x)
+    (cond ((atom? x) #f)
+          ((null? x) #f)
+          ((null? (cdr x)) #f)
+          ((null? (cdr (cdr x))) #t)
+          (else #f))))
