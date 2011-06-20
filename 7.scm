@@ -24,6 +24,9 @@
            => #f])
  (eqset? ['(6 large chickens with wings)
           '(6 chickens with large wings)
-          => #t]))
+          => #t])
+ (intersect? ['(stewed tomatoes and macaroni)
+              '(macaroni and cheese)
+              => #t]))
 
 (test-end)
