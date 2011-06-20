@@ -497,3 +497,8 @@
 (define third
   (lambda (l)
     (car (cdr (cdr l)))))
+
+;; p.122
+(define fun?
+  (lambda (l)
+    (set? (firsts l))))
