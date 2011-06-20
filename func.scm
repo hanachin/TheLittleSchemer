@@ -456,3 +456,12 @@
           ((member? (car set1) set2) (union (cdr set1) set2))
           (else (cons (car set1)
                       (union (cdr set1) set2))))))
+
+;; p.118
+(define xxx
+  (lambda (set1 set2)
+    (cond ((null? set1) '())
+          ((member? (car set1) set2)
+           (xxx (cdr set1) set2))
+          (else (cons (car set1)
+                      (xxx (cdr set1) set2))))))
