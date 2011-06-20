@@ -33,6 +33,13 @@
              => '(and macaroni)])
  (union ['(stewed tomatoes and macaroni casserole)
          '(macaroni and cheese)
-         => '(stewed tomatoes casserole macaroni and cheese)]))
+         => '(stewed tomatoes casserole macaroni and cheese)])
+ (intersectall ['((a b c) (c a d e) (e f g h a b))
+                => '(a)]
+               ['((6 pears and)
+                  (3 peaches and 6 peppers)
+                  (8 pears and 6 plums)
+                  (and 6 prunes with lots of apples))
+                => '(6 and)]))
 
 (test-end)
