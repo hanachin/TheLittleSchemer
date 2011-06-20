@@ -58,6 +58,14 @@
            ['((grape raisin) (plum prune) (stewed prune))
             => #f]
            ['((grape raisin) (plum prune) (stewed grape))
-            => #t]))
+            => #t])
+ (one-to-one? ['((8 3) (4 2) (7 6) (6 2) (3 4))
+               => #f]
+              ['((8 3) (4 8) (7 6) (6 2) (3 4))
+               => #t]
+              ['((grape raisin) (plum prune) (stewed prune))
+               => #f]
+              ['((grape raisin) (plum prune) (stewed grape))
+               => #t]))
 
 (test-end)
