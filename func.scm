@@ -465,3 +465,11 @@
            (xxx (cdr set1) set2))
           (else (cons (car set1)
                       (xxx (cdr set1) set2))))))
+
+;; p.119 + first question (null? l-set)
+(define intersectall
+  (lambda (l-set)
+    (cond ((null? l-set) '())
+          ((null? (cdr l-set)) (car l-set))
+          (else (intersect (car l-set)
+                           (intersectall (cdr l-set)))))))
