@@ -27,6 +27,9 @@
           => #t])
  (intersect? ['(stewed tomatoes and macaroni)
               '(macaroni and cheese)
-              => #t]))
+              => #t])
+ (intersect ['(stewed tomatoes and macaroni)
+             '(macaroni and cheese)
+             => '(and macaroni)]))
 
 (test-end)
