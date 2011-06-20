@@ -502,3 +502,11 @@
 (define fun?
   (lambda (l)
     (set? (firsts l))))
+
+;; p.122
+(define revrel
+  (lambda (rel)
+    (cond ((null? rel) '())
+          (else (cons (build (second (car rel))
+                             (first (car rel)))
+                      (revrel (cdr rel)))))))
