@@ -50,6 +50,14 @@
        ['((8 3) (4 2) (7 6) (6 2) (3 4)) => #t]
        ['((b 4) (b 0) (b 9) (e 5) (g 4)) => #f])
  (revrel ['((8 a) (pumpkin pie) (got sick))
-          => '((a 8) (pie pumpkin) (sick got))]))
+          => '((a 8) (pie pumpkin) (sick got))])
+ (fullfun? ['((8 3) (4 2) (7 6) (6 2) (3 4))
+            => #f]
+           ['((8 3) (4 8) (7 6) (6 2) (3 4))
+            => #t]
+           ['((grape raisin) (plum prune) (stewed prune))
+            => #f]
+           ['((grape raisin) (plum prune) (stewed grape))
+            => #t]))
 
 (test-end)
