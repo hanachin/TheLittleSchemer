@@ -519,3 +519,8 @@
 (define fullfun?
   (lambda (fun)
     (set? (seconds fun))))
+
+;; p.124
+(define one-to-one?
+  (lambda (fun)
+    (fun? (revrel fun))))
