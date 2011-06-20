@@ -44,6 +44,7 @@
  (a-pair? ['(pear pear) => #t]
           ['(3 7) => #t]
           ['((2) (pair)) => #t]
-          ['(full (house)) => #t]))
+          ['(full (house)) => #t]
+          ['(one two three) => #f]))
 
 (test-end)
