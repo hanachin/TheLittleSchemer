@@ -503,10 +503,14 @@
   (lambda (l)
     (set? (firsts l))))
 
-;; p.122
+;; p.123
+(define revpair
+  (lambda (pair)
+    (build (second pair) (first pair))))
+
+;; p.123
 (define revrel
   (lambda (rel)
     (cond ((null? rel) '())
-          (else (cons (build (second (car rel))
-                             (first (car rel)))
+          (else (cons (revpair (car rel))
                       (revrel (cdr rel)))))))
