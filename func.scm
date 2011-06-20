@@ -500,8 +500,8 @@
 
 ;; p.122
 (define fun?
-  (lambda (l)
-    (set? (firsts l))))
+  (lambda (rel)
+    (set? (firsts rel))))
 
 ;; p.123
 (define revpair
