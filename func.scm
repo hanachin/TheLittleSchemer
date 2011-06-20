@@ -432,3 +432,10 @@
   (lambda (set1 set2)
     (and (subset? set1 set2)
          (subset? set2 set1))))
+
+;; p.117
+(define intersect?
+  (lambda (set1 set2)
+    (cond ((null? set1) #f)
+          ((member? (car set1) set2) #t)
+          (else (intersect? (cdr set1) set2)))))
