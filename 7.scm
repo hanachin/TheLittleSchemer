@@ -40,6 +40,10 @@
                   (3 peaches and 6 peppers)
                   (8 pears and 6 plums)
                   (and 6 prunes with lots of apples))
-                => '(6 and)]))
+                => '(6 and)])
+ (a-pair? ['(pear pear) => #t]
+          ['(3 7) => #t]
+          ['((2) (pair)) => #t]
+          ['(full (house)) => #t]))
 
 (test-end)
