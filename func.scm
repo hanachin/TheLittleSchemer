@@ -482,3 +482,18 @@
           ((null? (cdr x)) #f)
           ((null? (cdr (cdr x))) #t)
           (else #f))))
+
+;; p.120
+(define first
+  (lambda (p) (car p)))
+
+(define second
+  (lambda (p) (car (cdr p))))
+
+(define build
+  (lambda (a1 a2)
+    (cons a1 (cons a2 '()))))
+
+(define third
+  (lambda (l)
+    (car (cdr (cdr l)))))
