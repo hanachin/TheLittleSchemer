@@ -48,6 +48,8 @@
           ['(one two three) => #f])
  (fun? ['((4 3) (4 2) (7 6) (6 2) (3 4)) => #f]
        ['((8 3) (4 2) (7 6) (6 2) (3 4)) => #t]
-       ['((b 4) (b 0) (b 9) (e 5) (g 4)) => #f]))
+       ['((b 4) (b 0) (b 9) (e 5) (g 4)) => #f])
+ (revrel ['((8 a) (pumpkin pie) (got sick))
+          => '((a 8) (pie pumpkin) (sick got))]))
 
 (test-end)
