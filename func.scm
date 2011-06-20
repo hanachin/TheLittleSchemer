@@ -514,3 +514,8 @@
     (cond ((null? rel) '())
           (else (cons (revpair (car rel))
                       (revrel (cdr rel)))))))
+
+;; p.123
+(define fullfun?
+  (lambda (fun)
+    (set? (seconds fun))))
