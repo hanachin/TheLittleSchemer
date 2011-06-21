@@ -532,3 +532,9 @@
           ((test? (car l) a) (cdr l))
           (else (cons (car l)
                       (rember-f test? a (cdr l)))))))
+
+;; p.129
+(define eq?-c
+  (lambda (a)
+    (lambda (x)
+      (eq? x a))))
