@@ -549,20 +549,20 @@
 ;; p.132
 (define insertL-f
   (lambda (test?)
-    (lambda (new old lat)
-      (cond ((null? lat) '())
-            ((test? (car lat) old) (cons new (cons old (cdr lat))))
-            (else (cons (car lat)
-                        ((insertL-f test?) new old (cdr lat))))))))
+    (lambda (new old l)
+      (cond ((null? l) '())
+            ((test? (car l) old) (cons new (cons old (cdr l))))
+            (else (cons (car l)
+                        ((insertL-f test?) new old (cdr l))))))))
 
 ;; p.132
 (define insertR-f
   (lambda (test?)
-    (lambda (new old lat)
-      (cond ((null? lat) '())
-            ((test? (car lat) old) (cons old (cons new (cdr lat))))
-            (else (cons (car lat)
-                        ((insertR-f test?) new old (cdr lat))))))))
+    (lambda (new old l)
+      (cond ((null? l) '())
+            ((test? (car l) old) (cons old (cons new (cdr l))))
+            (else (cons (car l)
+                        ((insertR-f test?) new old (cdr l))))))))
 
 ;; p.133
 (define seqL
@@ -573,3 +573,4 @@
 (define seqR
   (lambda (nwe old l)
     (cons old (cons new l))))
+
