@@ -551,7 +551,7 @@
   (lambda (test?)
     (lambda (new old lat)
       (cond ((null? lat) '())
-            ((test? (car lat) old) (cons new lat))
+            ((test? (car lat) old) (cons new (cons old (cdr lat))))
             (else (cons (car lat)
                         ((insertL-f test?) new old (cdr lat))))))))
 
