@@ -10,5 +10,6 @@
                 => '(beans are good)]
            [equal? '(pop corn) '(lemonade (pop corn) and (cake))
                    => '(lemonade and (cake))])
- )
+ (eq?-salad ['salad => #t]
+            ['tuna => #f]))
 (test-end)
