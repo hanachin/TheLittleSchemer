@@ -571,7 +571,7 @@
 
 ;; p.133
 (define seqR
-  (lambda (nwe old l)
+  (lambda (new old l)
     (cons old (cons new l))))
 
 ;; p.134
