@@ -545,3 +545,21 @@
 
 ;; p.131
 (define rember-eq? (rember-f eq?))
+
+;; p.132
+(define insertL-f
+  (lambda (test?)
+    (lambda (new old lat)
+      (cond ((null? lat) '())
+            ((test? (car lat) old) (cons new lat))
+            (else (cons (car lat)
+                        ((insertL-f test?) new old (cdr lat))))))))
+
+;; p.132
+(define insertR-f
+  (lambda (test?)
+    (lambda (new old lat)
+      (cond ((null? lat) '())
+            ((test? (car lat) old) (cons old (cons new (cdr lat))))
+            (else (cons (car lat)
+                        ((insertR-f test?) new old (cdr lat))))))))
