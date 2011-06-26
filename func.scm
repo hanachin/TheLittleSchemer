@@ -542,3 +542,6 @@
 
 ;;p.130
 (define eq?-salad (eq?-c 'salad))
+
+;; p.131
+(define rember-eq? (rember-f eq?))
