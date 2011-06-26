@@ -525,13 +525,14 @@
   (lambda (fun)
     (fun? (revrel fun))))
 
-;; p.128
+;; p.131
 (define rember-f
-  (lambda (test? a l)
-    (cond ((null? l) '())
-          ((test? (car l) a) (cdr l))
-          (else (cons (car l)
-                      (rember-f test? a (cdr l)))))))
+  (lambda (test?)
+    (lambda (a l)
+      (cond ((null? l) '())
+            ((test? (car l) a) (cdr l))
+            (else (cons (car l)
+                        ((rember-f test?) a (cdr l))))))))
 
 ;; p.129
 (define eq?-c
