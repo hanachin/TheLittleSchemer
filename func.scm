@@ -45,22 +45,6 @@
           (else (cons (car (cdr (car l)))
                       (seconds (cdr l)))))))
 
-;; p.52 (simplify)
-(define insertR
-  (lambda (new old lat)
-    (cond ((null? lat) '())
-          ((eq? (car lat) old) (cons old (cons new (cdr lat))))
-          (else (cons (car lat)
-                      (insertR new old (cdr lat)))))))
-
-;; p.52 insertL (simplify)
-(define insertL
-  (lambda (new old lat)
-    (cond ((null? lat) '())
-          ((eq? (car lat) old) (cons new lat))
-          (else (cons (car lat)
-                      (insertL new old (cdr lat)))))))
-
 ;; p.53 (simplify)
 (define subst
   (lambda (new old lat)
@@ -582,3 +566,9 @@
             ((eq? (car l) old) (seq new old (cdr l)))
             (else (cons (car l)
                         ((insert-g seq) new old (cdr l))))))))
+
+;; p.134
+(define insertL (insert-g seqL))
+
+;; p.134
+(define insertR (insert-g seqR))
