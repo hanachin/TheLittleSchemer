@@ -538,3 +538,6 @@
   (lambda (a)
     (lambda (x)
       (eq? x a))))
+
+;;p.130
+(define eq?-salad (eq?-c 'salad))
