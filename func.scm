@@ -574,3 +574,11 @@
   (lambda (nwe old l)
     (cons old (cons new l))))
 
+;; p.134
+(define insert-g
+  (lambda (seq)
+    (lambda (new old lat)
+      (cond ((null? lat) '())
+            ((eq? (car lat) old) (seq new old (cdr lat)))
+            (else (cons (car lat)
+                        ((insert-g seq) new old (cdr lat))))))))
