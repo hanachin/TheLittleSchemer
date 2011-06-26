@@ -9,5 +9,7 @@
             ['tuna => #f])
  (rember-eq? ['tuna '(tuna salad is good)
                     => '(salad is good)]))
+(test-section "rember-f")
 (test* "((rember-f eq?) 'tuna '(shrimp salad and tuna salad))" '(shrimp salad and salad) ((rember-f eq?) 'tuna '(shrimp salad and tuna salad)))
+(test* "((rember-f eq?) 'eq? '(equal? eq? eqan? eqlist? eqpair?))" '(equal? eqan? eqlist? eqpair?) ((rember-f eq?) 'eq? '(equal? eq? eqan? eqlist? eqpair?)))
 (test-end)
