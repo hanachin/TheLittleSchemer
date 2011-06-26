@@ -11,5 +11,7 @@
  ;;           [equal? '(pop corn) '(lemonade (pop corn) and (cake))
  ;;                   => '(lemonade and (cake))])
  (eq?-salad ['salad => #t]
-            ['tuna => #f]))
+            ['tuna => #f])
+ (rember-eq? ['tuna '(tuna salad is good)
+                    => '(salad is good)]))
 (test-end)
