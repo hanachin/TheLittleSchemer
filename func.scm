@@ -577,8 +577,8 @@
 ;; p.134
 (define insert-g
   (lambda (seq)
-    (lambda (new old lat)
-      (cond ((null? lat) '())
-            ((eq? (car lat) old) (seq new old (cdr lat)))
-            (else (cons (car lat)
-                        ((insert-g seq) new old (cdr lat))))))))
+    (lambda (new old l)
+      (cond ((null? l) '())
+            ((eq? (car l) old) (seq new old (cdr l)))
+            (else (cons (car l)
+                        ((insert-g seq) new old (cdr l))))))))
