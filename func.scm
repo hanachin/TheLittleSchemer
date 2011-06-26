@@ -563,3 +563,13 @@
             ((test? (car lat) old) (cons old (cons new (cdr lat))))
             (else (cons (car lat)
                         ((insertR-f test?) new old (cdr lat))))))))
+
+;; p.133
+(define seqL
+  (lambda (new old l)
+    (cons new (cons old l))))
+
+;; p.133
+(define seqR
+  (lambda (nwe old l)
+    (cons old (cons new l))))
