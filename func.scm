@@ -23,13 +23,6 @@
     (cond ((null? lat) #f)
           (else (or (equal? (car lat) a)
                     (member? a (cdr lat)))))))
-;; p.97
-(define rember
-  (lambda (s l)
-    (cond ((null? l) '())
-          ((equal? (car l) s) (cdr l))
-          (else (cons (car l)
-                      (rember s (cdr l)))))))
 
 ;; p.46, p.48
 (define firsts
@@ -578,3 +571,13 @@
 
 ;; p.135
 (define subst (insert-g seqS))
+
+;; p.135
+(define seqrem
+  (lambda (new old l)
+    l))
+
+;; p.135
+(define rember
+  (lambda (a l)
+    ((insert-g seqrem) #f a l)))
