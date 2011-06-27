@@ -46,14 +46,6 @@
                       (seconds (cdr l)))))))
 
 ;; p.53 (simplify)
-(define subst
-  (lambda (new old lat)
-    (cond ((null? lat) '())
-          ((eq? (car lat) old) (cons new (cdr lat)))
-          (else (cons (car lat)
-                      (subst new old (cdr lat)))))))
-
-;; p.53 (simplify)
 (define subst2
   (lambda (new o1 o2 lat)
     (cond ((null? lat) '())
@@ -578,3 +570,11 @@
   (insert-g
    (lambda (new old l)
     (cons old (cons new l)))))
+
+;; p.135
+(define seqS
+  (lambda (new old l)
+    (cons new l)))
+
+;; p.135
+(define subst (insert-g seqS))
