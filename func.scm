@@ -625,3 +625,8 @@
                            (cdr lat)
                            (lambda (newlat seen)
                              (col (cons (car lat) newlat) seen)))))))
+
+;; p.140
+(define a-friend
+  (lambda (x y)
+    (null? y)))
