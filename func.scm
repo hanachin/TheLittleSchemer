@@ -609,3 +609,19 @@
           ((test? (car lat)) (multiremberT test? (cdr lat)))
           (else (cons (car lat)
                       (multiremberT test? (cdr lat)))))))
+
+;; p.139
+(define multirember&co
+  (lambda (a lat col)
+    (cond ((null? lat)
+           (col '() '()))
+          ((eq? (car lat) a)
+           (multirember&co a
+                           (cdr lat)
+                           (lambda (newlat seen)
+                             (col newlat (cons (car lat) seen)))))
+          (else
+           (multirember&co a
+                           (cdr lat)
+                           (lambda (newlat seen)
+                             (col (cons (car lat) newlat) seen)))))))
