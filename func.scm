@@ -630,3 +630,8 @@
 (define a-friend
   (lambda (x y)
     (null? y)))
+
+;; p.141
+(define latest-friend
+  (lambda (newlat seen)
+    (a-friend (cons 'and newlat) seen)))
