@@ -601,3 +601,11 @@
 ;; p.138
 (define eq?-tuna
   (eq?-c 'tuna))
+
+;; p.139
+(define multiremberT
+  (lambda (test? lat)
+    (cond ((null? lat) '())
+          ((test? (car lat)) (multiremberT test? (cdr lat)))
+          (else (cons (car lat)
+                      (multiremberT test? (cdr lat)))))))
