@@ -343,20 +343,6 @@
   (lambda (aexp)
     (car aexp)))
 
-;; p.105
-(define value
-  (lambda (nexp)
-    (cond ((atom? nexp) nexp)
-          ((eq? (operator nexp) '+)
-           (o+ (value (1st-sub-exp nexp))
-               (value (2nd-sub-exp nexp))))
-          ((eq? (operator nexp) '*)
-           (o* (value (1st-sub-exp nexp))
-               (value (2nd-sub-exp nexp))))
-          (else
-           (o-expt (value (1st-sub-exp nexp))
-                   (value (2nd-sub-exp nexp)))))))
-
 ;; p.109
 (define sero?
   (lambda (n)
@@ -581,3 +567,20 @@
 (define rember
   (lambda (a l)
     ((insert-g seqrem) #f a l)))
+
+;; p.136
+(define atom-to-function
+  (lambda (x)
+    (cond ((eq? x '+) o+)
+          ((eq? x '*) o*)
+          (else o-expt))))
+
+;; p.137
+(define value
+  (lambda (nexp)
+    (cond ((atom? nexp) nexp)
+          (else
+           ((atom-to-function
+             (operator nexp))
+            (value (1st-sub-exp nexp))
+            (value (2nd-sub-exp nexp)))))))
