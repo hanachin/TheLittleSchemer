@@ -17,4 +17,9 @@
 (test* "((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna))"
        '(shrimp salad salad and)
        ((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna)))
+
+(test-section "multiremberT")
+(test* "(multiremberT eq?-tuna '(shrimp salad tuna salad and tuna))"
+       '(shrimp salad salad and)
+       (multiremberT eq?-tuna '(shrimp salad tuna salad and tuna)))
 (test-end)
