@@ -22,4 +22,13 @@
 (test* "(multiremberT eq?-tuna '(shrimp salad tuna salad and tuna))"
        '(shrimp salad salad and)
        (multiremberT eq?-tuna '(shrimp salad tuna salad and tuna)))
+(f-test
+ (multirember&co ['tuna '(tuna) a-friend
+                        => #f]
+                 ['tuna '(and tuna) latest-friend
+                        => #f]
+                 ['tuna
+                  '(strawberries tuna and swordfish)
+                  (lambda (x y) (length x))
+                  => 3]))
 (test-end)
