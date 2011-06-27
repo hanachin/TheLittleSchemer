@@ -12,4 +12,9 @@
 (test-section "rember-f")
 (test* "((rember-f eq?) 'tuna '(shrimp salad and tuna salad))" '(shrimp salad and salad) ((rember-f eq?) 'tuna '(shrimp salad and tuna salad)))
 (test* "((rember-f eq?) 'eq? '(equal? eq? eqan? eqlist? eqpair?))" '(equal? eqan? eqlist? eqpair?) ((rember-f eq?) 'eq? '(equal? eq? eqan? eqlist? eqpair?)))
+
+(test-section "multirember-f")
+(test* "((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna))"
+       '(shrimp salad salad and)
+       ((multirember-f eq?) 'tuna '(shrimp salad tuna salad and tuna)))
 (test-end)
