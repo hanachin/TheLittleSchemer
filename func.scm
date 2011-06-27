@@ -597,3 +597,7 @@
 ;; p.138
 (define multirember-eq?
   (multirember-f eq?))
+
+;; p.138
+(define eq?-tuna
+  (eq?-c 'tuna))
