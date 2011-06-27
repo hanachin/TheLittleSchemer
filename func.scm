@@ -593,3 +593,7 @@
             ((test? (car lat) a) ((multirember-f test?) a (cdr lat)))
             (else (cons (car lat)
                         ((multirember-f test?) a (cdr lat))))))))
+
+;; p.138
+(define multirember-eq?
+  (multirember-f eq?))
