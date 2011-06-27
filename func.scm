@@ -584,3 +584,12 @@
              (operator nexp))
             (value (1st-sub-exp nexp))
             (value (2nd-sub-exp nexp)))))))
+
+;; p.137
+(define multirember-f
+  (lambda (test?)
+    (lambda (a lat)
+      (cond ((null? lat) '())
+            ((test? (car lat) a) ((multirember-f test?) a (cdr lat)))
+            (else (cons (car lat)
+                        ((multirember-f test?) a (cdr lat))))))))
