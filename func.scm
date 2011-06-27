@@ -568,7 +568,13 @@
                         ((insert-g seq) new old (cdr l))))))))
 
 ;; p.134
-(define insertL (insert-g seqL))
+(define insertL
+  (insert-g
+   (lambda (new old l)
+     (cons new (cons old l)))))
 
 ;; p.134
-(define insertR (insert-g seqR))
+(define insertR
+  (insert-g
+   (lambda (new old l)
+    (cons old (cons new l)))))
