@@ -31,4 +31,14 @@
                   '(strawberries tuna and swordfish)
                   (lambda (x y) (length x))
                   => 3]))
+
+(test-section "multiinsertLR&co")
+(let ((col (lambda (newlat L R) (list newlat L R))))
+  (test* "(multiinsertLR&co 'cranberries 'fish 'chips '() col)"
+         '(() 0 0)
+         (multiinsertLR&co 'cranberries 'fish 'chips '() col))
+  (test* "(multiinsertLR&co 'salty 'fish 'chips '(chips and fish or fish and chips) col)"
+         '((chips salty and salty fish or salty fish and chips salty) 2 2)
+         (multiinsertLR&co 'salty 'fish 'chips '(chips and fish or fish and chips) col)))
+
 (test-end)
