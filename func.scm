@@ -635,3 +635,18 @@
 (define latest-friend
   (lambda (newlat seen)
     (a-friend (cons 'and newlat) seen)))
+
+;; p.143
+(define multiinsertLR
+  (lambda (new oldL oldR lat)
+    (cond ((null? lat) '())
+          ((eq? (car lat) oldL)
+           (cons new
+                 (cons oldL
+                       (multiinsertLR new oldL oldR (cdr lat)))))
+          ((eq? (car lat) oldR)
+           (cons oldR
+                 (cons new
+                       (multiinsertLR new oldL oldR (cdr lat)))))
+          (else (cons (car lat)
+                      (multiinsertLR new oldL oldR (cdr lat)))))))
