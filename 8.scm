@@ -41,4 +41,8 @@
          '((chips salty and salty fish or salty fish and chips salty) 2 2)
          (multiinsertLR&co 'salty 'fish 'chips '(chips and fish or fish and chips) col)))
 
+(f-test
+ (evens-only* ['((9 1 2 8) 3 10 ((9 9) 7 6) 2)
+               => '((2 8) 10 (() 6) 2)]))
+
 (test-end)
