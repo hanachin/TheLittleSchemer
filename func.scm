@@ -691,3 +691,33 @@
                  (else (evens-only* (cdr l)))))
           (else (cons (evens-only* (car l))
                       (evens-only* (cdr l)))))))
+
+;; p.148
+(define evens-only*&co
+  (lambda (l col)
+    (cond ((null? l) (col '() 1 0))
+          ((atom? (car l))
+           (cond ((even? (car l))
+                  (evens-only*&co
+                   (cdr l)
+                   (lambda (newl p s)
+                     (col (cons (car l) newl)
+                          (* (car l) p)
+                          s))))
+                 (else (evens-only*&co
+                        (cdr l)
+                        (lambda (newl p s)
+                          (col newl p (+ s (car l))))))))
+           (else (evens-only*&co
+                  (car l)
+                  (lambda (al ap as)
+                    (evens-only*&co (cdr l)
+                                    (lambda (dl dp ds)
+                                      (col (cons al dl)
+                                           (* ap dp)
+                                           (+ as ds))))))))))
+;; p.148
+(define the-last-friend
+  (lambda (newl product sum)
+    (cons sum
+          (cons product newl))))
