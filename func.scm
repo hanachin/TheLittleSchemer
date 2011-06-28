@@ -681,3 +681,13 @@
 (define even?
   (lambda (n)
     (= (* (/ n 2) 2) n)))
+
+;; p.146
+(define even-only*
+  (lambda (l)
+    (cond ((null? l) '())
+          ((atom? (car l))
+           (cond ((even? (car l)) (cons (car l) (even-only* (cdr l))))
+                 (else (even-only* (cdr l)))))
+          (else (cons (even-only* (car l))
+                      (even-only* (cdr l)))))))
