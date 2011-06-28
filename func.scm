@@ -680,7 +680,7 @@
 ;; p.146
 (define even?
   (lambda (n)
-    (= (* (/ n 2) 2) n)))
+    (o= (o* (o/ n 2) 2) n)))
 
 ;; p.146
 (define evens-only*
