@@ -683,7 +683,7 @@
     (= (* (/ n 2) 2) n)))
 
 ;; p.146
-(define even-only*
+(define evens-only*
   (lambda (l)
     (cond ((null? l) '())
           ((atom? (car l))
