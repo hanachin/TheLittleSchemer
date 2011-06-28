@@ -676,3 +676,8 @@
                                     (col (cons (car lat)
                                                newlat)
                                          L R)))))))
+
+;; p.146
+(define even?
+  (lambda (n)
+    (= (* (/ n 2) 2) n)))
