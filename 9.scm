@@ -8,6 +8,8 @@
  (looking ['caviar '(6 2 4 caviar 5 7 3)
                    => #t]
           ['caviar '(6 2 grits caviar 5 7 3)
-                   => #f]))
+                   => #f]
+          ['caviar '(6 2 4 caviar 5 7 3)
+                   => #t]))
 
 (test-end)
