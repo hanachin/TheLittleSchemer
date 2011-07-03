@@ -3,7 +3,7 @@
 (load "func")
 (load "test-util")
 
-(test-start "chapter 7")
+(test-start "chapter 8")
 (f-test
  (eq?-salad ['salad => #t]
             ['tuna => #f])
