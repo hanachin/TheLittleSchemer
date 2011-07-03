@@ -10,6 +10,8 @@
           ['caviar '(6 2 grits caviar 5 7 3)
                    => #f]
           ['caviar '(6 2 4 caviar 5 7 3)
-                   => #t]))
+                   => #t])
+ (shift ['((a b) c) => '(a (b c))]
+        ['((a b) (c d)) => '(a (b (c d)))]))
 
 (test-end)
