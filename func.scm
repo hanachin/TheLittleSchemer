@@ -721,3 +721,8 @@
   (lambda (newl product sum)
     (cons sum
           (cons product newl))))
+
+;; p.151
+(define looking
+  (lambda (a lat)
+    (keep-looking a (pick 1 lat) lat)))
