@@ -732,3 +732,10 @@
   (lambda (a sorn lat)
     (cond ((number? sorn) (keep-looking a (pick sorn lat) lat))
           (else (eq? sorn a)))))
+
+;; p.154
+(define shift
+  (lambda (pair)
+    (build (first (first pair))
+           (build (second (first pair))
+                  (second pair)))))
