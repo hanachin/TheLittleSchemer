@@ -755,3 +755,10 @@
     (cond ((atom? para) 1)
           (else (o+ (length* (first para))
                     (length* (second para)))))))
+
+;; p.156
+(define weight*
+  (lambda (pora)
+    (cond ((atom? pora) 1)
+          (else (o+ (o* (weight* (first pora)) 2)
+                    (weight* (second pora)))))))
