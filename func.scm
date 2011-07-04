@@ -739,3 +739,12 @@
     (build (first (first pair))
            (build (second (first pair))
                   (second pair)))))
+
+;; p.154
+(define align
+  (lambda (para)
+    (cond ((atom? para) para)
+          ((a-pair? (first para))
+           (align (shift para)))
+          (else (build (first para)
+                       (align (second para)))))))
