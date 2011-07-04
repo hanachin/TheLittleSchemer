@@ -748,3 +748,10 @@
            (align (shift para)))
           (else (build (first para)
                        (align (second para)))))))
+
+;; p.155
+(define length*
+  (lambda (para)
+    (cond ((atom? para) 1)
+          (else (o+ (length* (first para))
+                    (length* (second para)))))))
