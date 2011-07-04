@@ -778,3 +778,11 @@
     (cond ((one? n) 1)
           ((even? n) (C (o/ n 2)))
           (else (C (add1 (o* 3 n)))))))
+
+;; p.158
+(define A
+  (lambda (n m)
+    (cond ((zero? n) (add1 m))
+          ((zero? m) (A (sub1 n) 1))
+          (else (A (sub1 n)
+                   (A n (sub1 m)))))))
