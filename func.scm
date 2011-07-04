@@ -762,3 +762,12 @@
     (cond ((atom? pora) 1)
           (else (o+ (o* (weight* (first pora)) 2)
                     (weight* (second pora)))))))
+
+;; p.156
+(define shuffle
+  (lambda (pora)
+    (cond ((atom? pora) pora)
+          ((a-pair? (first pora))
+           (shuffle (revpair pora)))
+          (else (build (first pora)
+                       (shuffle (second pora)))))))
