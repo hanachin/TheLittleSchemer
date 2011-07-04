@@ -14,6 +14,8 @@
  (shift ['((a b) c) => '(a (b c))]
         ['((a b) (c d)) => '(a (b (c d)))])
  (weight* ['((a b) c) => 7]
-          ['(a (b c)) => 5]))
+          ['(a (b c)) => 5])
+ (shuffle ['(a (b c)) => '(a (b c))]
+          ['(a b) => '(a b)]))
 
 (test-end)
