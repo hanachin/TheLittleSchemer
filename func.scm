@@ -771,3 +771,10 @@
            (shuffle (revpair pora)))
           (else (build (first pora)
                        (shuffle (second pora)))))))
+
+;; p.157
+(define C
+  (lambda (n)
+    (cond ((one? n) 1)
+          ((even? n) (C (o/ n 2)))
+          (else (C (add1 (o* 3 n)))))))
