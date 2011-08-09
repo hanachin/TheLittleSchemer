@@ -34,8 +34,9 @@
                           '((food is) (number one with us)))))
 
 (f-test
- (lookup-in-entry ['name '((appetizer entree beverage)
+ (lookup-in-entry ['entree '((appetizer entree beverage)
                            (food tastes good))
+                         (lambda (name) name)
                          => 'tastes]))
 
 (test-end)
