@@ -875,3 +875,12 @@
     (lookup-in-table e table initial-table)))
 
 (define initial-table (lambda (name) (car '())))
+
+;; p186
+(define *lambda
+  (lambda (e table)
+    (build 'non-primitive
+           (cons table (cdr e)))))
+(define table-of first)
+(define formals-of second)
+(define body-of third)
