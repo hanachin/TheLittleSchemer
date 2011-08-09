@@ -854,3 +854,10 @@
                  ((eq? (car e) 'cond) *cond)
                  (else *application)))
           (else *application))))
+
+;; p185
+(define *const
+  (cond ((number? e) e)
+        ((eq? e #t) #t)
+        ((eq? e #f) #f)
+        (else (build 'primitive e))))
