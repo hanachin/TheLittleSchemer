@@ -918,3 +918,6 @@
   (lambda (e table)
     (apply (meaning (function-of e) table)
            (evlis (arguments-of e) table))))
+
+(define function-of car)
+(define arguments-of cdr)
