@@ -955,7 +955,7 @@
   (lambda (name vals)
     (cond ((eq? name 'cons) (cons (first vals) (second vals)))
           ((eq? name 'car) (car (first vals)))
-          ((eq? name 'cdr) (cdr (second vals)))
+          ((eq? name 'cdr) (cdr (first vals)))
           ((eq? name 'null?) (null? (first vals)))
           ((eq? name 'eq?) (eq? (first vals) (second vals)))
           ((eq? name 'atom?) (my-atom? (first vals)))
