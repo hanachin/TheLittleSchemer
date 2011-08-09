@@ -912,3 +912,9 @@
     (cond ((null? args) '())
           (else (cons (meaning (car args) table)
                       (evlis (cdr args) table))))))
+
+;; p188
+(define *application
+  (lambda (e table)
+    (apply (meaning (function-of e) table)
+           (evlis (arguments-of e) table))))
