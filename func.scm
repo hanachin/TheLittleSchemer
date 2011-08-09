@@ -840,8 +840,8 @@
      ((eq? e 'eq?) *const)
      ((eq? e 'atom?) *const)
      ((eq? e 'zero?) *const)
-     ((eq? e 'add1?) *const)
-     ((eq? e 'sub1?) *const)
+     ((eq? e 'add1) *const)
+     ((eq? e 'sub1) *const)
      ((eq? e 'number?) *const)
      (else *identifier))))
 

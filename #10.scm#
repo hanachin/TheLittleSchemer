@@ -85,5 +85,10 @@
          (cons z x)))
 (meaning '(add1 1 2) '())
 (*application '(add1 1 2) '())
+(apply (meaning 'add1 '())
+       (evlis '(1 2) '()))
+(apply (meaning 'add1 '())
+       (evlis '(1 2) '()))
 
+(meaning 'add1 '())
 (test-end)
