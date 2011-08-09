@@ -930,3 +930,10 @@
 (define non-primitive?
   (lambda (l)
     (eq? (first l) 'non-primitive)))
+
+(define apply
+  (lambda (fun vals)
+    (cond ((primitive? fun)
+           (apply-primitive (second fun) vals))
+          ((non-primitive? fun)
+           (apply-closure (second fun) vals)))))
