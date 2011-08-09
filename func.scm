@@ -789,3 +789,6 @@
 
 ;; p.153
 (define (eternity x) (eternity x))
+
+;; p.177
+(define new-entry build)
