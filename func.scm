@@ -919,5 +919,14 @@
     (apply (meaning (function-of e) table)
            (evlis (arguments-of e) table))))
 
+;; p189
 (define function-of car)
 (define arguments-of cdr)
+
+(define primitive?
+  (lambda (l)
+    (eq? (first l) 'primitive)))
+
+(define non-primitive?
+  (lambda (l)
+    (eq? (first l) 'non-primitive)))
