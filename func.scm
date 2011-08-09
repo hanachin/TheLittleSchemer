@@ -800,3 +800,10 @@
                           (first entry)
                           (second entry)
                           entry-f)))
+
+;; p.178
+(define lookup-in-entry-help
+  (lambda (name names values entry-f)
+    (cond ((null? names) (entry-f name))
+          ((equal? name (car names)) (car values))
+          (else (lookup-in-entry-help name (cdr names) (cdr values) entry-f)))))
