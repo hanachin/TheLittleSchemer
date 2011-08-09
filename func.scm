@@ -879,7 +879,7 @@
 (define text-of second)
 
 ;; p185
-(define identifier
+(define *identifier
   (lambda (e table)
     (lookup-in-table e table initial-table)))
 
