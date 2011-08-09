@@ -792,3 +792,11 @@
 
 ;; p.177
 (define new-entry build)
+
+;; p.178
+(define lookup-in-entry
+  (lambda (name entry entry-f)
+    (lookup-in-entry-help name
+                          (first entry)
+                          (second entry)
+                          entry-f)))
