@@ -917,7 +917,7 @@
 
 ;; p188
 (define evlis
-  (lambda (args)
+  (lambda (args table)
     (cond ((null? args) '())
           (else (cons (meaning (car args) table)
                       (evlis (cdr args) table))))))
