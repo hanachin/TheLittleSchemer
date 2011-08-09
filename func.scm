@@ -868,3 +868,10 @@
     (text-of e)))
 
 (define text-of second)
+
+;; p185
+(define identifier
+  (lambda (e table)
+    (lookup-in-table e table initial-table)))
+
+(define initial-table (lambda (name) (car '())))
