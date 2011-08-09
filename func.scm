@@ -819,3 +819,9 @@
                                  (car table)
                                  (lambda (name)
                                    (lookup-in-table name (cdr table) table-f)))))))
+
+;; p.183
+(define expression-to-action
+  (lambda (e)
+    (cond ((atom? e) (atom-to-action e))
+          (else (list-to-action e)))))
