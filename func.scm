@@ -855,6 +855,14 @@
                  (else *application)))
           (else *application))))
 
+(define value
+  (lambda (e)
+    (meaning e '())))
+
+(define meaning
+  (lambda (e table)
+    ((expression-to-action e) e table)))
+
 ;; p185
 (define *const
   (cond ((number? e) e)
