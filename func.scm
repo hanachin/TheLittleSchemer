@@ -958,3 +958,10 @@
           ((eq? name 'add1) (add1 (first vals)))
           ((eq? name 'sub1) (sub1 (first vals)))
           ((eq? name 'number?) (number? (first vals))))))
+
+(define apply-closure
+  (lambda (closure vals)
+    (meaning (body-of closure)
+             (extend-table
+              (new-entry (formals-of closure) vals)
+              (table-of closure)))))
