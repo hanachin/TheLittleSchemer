@@ -844,3 +844,13 @@
      ((eq? e 'sub1?) *const)
      ((eq? e 'number?) *const)
      (else *identifier))))
+
+;; p184
+(define list-to-action
+  (lambda (e)
+    (cond ((atom? (car e))
+           (cond ((eq? (car e) 'quote) *quote)
+                 ((eq? (car e) 'lambda) *lambda)
+                 ((eq? (car e) 'cond) *cond)
+                 (else *application)))
+          (else *application))))
