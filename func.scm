@@ -842,6 +842,10 @@
      ((eq? e 'zero?) *const)
      ((eq? e 'add1) *const)
      ((eq? e 'sub1) *const)
+     ((eq? e '+) *const)
+     ((eq? e '-) *const)
+     ((eq? e '*) *const)
+     ((eq? e 'expt) *const)
      ((eq? e 'number?) *const)
      (else *identifier))))
 
@@ -958,6 +962,10 @@
           ((eq? name 'zero?) (zero? (first vals)))
           ((eq? name 'add1) (add1 (first vals)))
           ((eq? name 'sub1) (sub1 (first vals)))
+          ((eq? name '+) (+ (first vals) (second vals)))
+          ((eq? name '-) (- (first vals) (second vals)))
+          ((eq? name '*) (* (first vals) (second vals)))
+          ((eq? name 'expt) (expt (first vals) (second vals)))
           ((eq? name 'number?) (number? (first vals))))))
 
 (define my-atom?
