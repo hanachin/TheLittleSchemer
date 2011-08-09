@@ -954,13 +954,13 @@
           ((eq? name 'cdr) (cdr (second vals)))
           ((eq? name 'null?) (null? (first vals)))
           ((eq? name 'eq?) (eq? (first vals) (second vals)))
-          ((eq? name 'atom?) (:atom? (first vals)))
+          ((eq? name 'atom?) (my-atom? (first vals)))
           ((eq? name 'zero?) (zero? (first vals)))
           ((eq? name 'add1) (add1 (first vals)))
           ((eq? name 'sub1) (sub1 (first vals)))
           ((eq? name 'number?) (number? (first vals))))))
 
-(define :atom?
+(define my-atom?
   (lambda (x)
     ((atom? x) #t)
     ((null? x) #f)
