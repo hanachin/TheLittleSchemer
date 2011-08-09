@@ -33,4 +33,9 @@
                (new-entry '(beverage dessert)
                           '((food is) (number one with us)))))
 
+(f-test
+ (lookup-in-entry ['name '((appetizer entree beverage)
+                           (food tastes good))
+                         => 'tastes]))
+
 (test-end)
