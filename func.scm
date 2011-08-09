@@ -810,3 +810,12 @@
 
 ;; p.178
 (define extend-table cons)
+
+;; p.179
+(define lookup-in-table
+  (lambda (name table table-f)
+    (cond ((null? table) (table-f name))
+          (else (lookup-in-entry name
+                                 (car table)
+                                 (lambda (name)
+                                   (lookup-in-table name (cdr table) table-f)))))))
