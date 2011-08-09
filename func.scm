@@ -807,3 +807,6 @@
     (cond ((null? names) (entry-f name))
           ((equal? name (car names)) (car values))
           (else (lookup-in-entry-help name (cdr names) (cdr values) entry-f)))))
+
+;; p.178
+(define extend-table cons)
