@@ -865,10 +865,11 @@
 
 ;; p185
 (define *const
-  (cond ((number? e) e)
-        ((eq? e #t) #t)
-        ((eq? e #f) #f)
-        (else (build 'primitive e))))
+  (lambda (e table)
+    (cond ((number? e) e)
+          ((eq? e #t) #t)
+          ((eq? e #f) #f)
+          (else (build 'primitive e)))))
 
 ;; p185
 (define *quote
