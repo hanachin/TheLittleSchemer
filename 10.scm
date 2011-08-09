@@ -37,6 +37,13 @@
  (lookup-in-entry ['entree '((appetizer entree beverage)
                            (food tastes good))
                          (lambda (name) name)
-                         => 'tastes]))
+                         => 'tastes])
+ (lookup-in-table ['entree
+                   '(((entree dessert)
+                      (spaghetti spumoni))
+                     ((appetizer entree beverage)
+                      (food tastes good)))
+                   (lambda (name) name)
+                   => 'spaghetti]))
 
 (test-end)
