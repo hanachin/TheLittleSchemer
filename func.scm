@@ -861,3 +861,10 @@
         ((eq? e #t) #t)
         ((eq? e #f) #f)
         (else (build 'primitive e))))
+
+;; p185
+(define *quote
+  (lambda (e table)
+    (text-of e)))
+
+(define text-of second)
