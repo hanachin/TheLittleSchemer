@@ -905,3 +905,10 @@
   (lambda (e table)
     (evcon (cond-lines-of e) table)))
 (define cond-lines-of cdr)
+
+;; p188
+(define evlis
+  (lambda (args)
+    (cond ((null? args) '())
+          (else (cons (meaning (car args) table)
+                      (evlis (cdr args) table))))))
