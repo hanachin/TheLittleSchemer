@@ -960,6 +960,14 @@
           ((eq? name 'sub1) (sub1 (first vals)))
           ((eq? name 'number?) (number? (first vals))))))
 
+(define :atom?
+  (lambda (x)
+    ((atom? x) #t)
+    ((null? x) #f)
+    ((eq? (car x) 'primitive) #t)
+    ((eq? (car x) 'non-primitive?) #f)
+    (else #f)))
+
 (define apply-closure
   (lambda (closure vals)
     (meaning (body-of closure)
